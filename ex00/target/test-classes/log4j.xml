@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.dotlamp.pjt">
+	<logger name="com.dotlamp.pjt01">
 		<level value="info" />
 	</logger>
 	
@@ -30,6 +30,17 @@
 
 	<logger name="org.springframework.web">
 		<level value="info" />
+	</logger>
+	
+	<!-- 로그인 레벨 설정(로그 출력 길이 수정)  -->
+	<logger name ="kdbc.audit">
+		<level value="warn" />
+	</logger>
+	<logger name="jdbc.resultset">
+		<level value="warn" />
+	</logger>
+	<logger name="jdbc.connection">
+		<level value="warn" />
 	</logger>
 
 	<!-- Root Logger -->

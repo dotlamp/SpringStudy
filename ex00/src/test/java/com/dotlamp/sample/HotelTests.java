@@ -1,6 +1,7 @@
 package com.dotlamp.sample;
 
 import static org.junit.Assert.assertNotNull;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,19 +15,21 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {RootConfig.class})
+@ContextConfiguration(classes= {RootConfig.class})
 @Log4j
-public class SampleTests {
+public class HotelTests {
 
 	@Setter(onMethod_ = {@Autowired})
-	private Restaurant restaurant;
+	private SampleHotel sampleHotel;
 	
 	@Test
 	public void testExist() {
-		assertNotNull(restaurant);
+		assertNotNull(sampleHotel);
 		
-		log.info(restaurant);
-		log.info("--------------");
-		log.info(restaurant.getChef());
+		log.info(sampleHotel);
+		log.info("----------------------");
+		log.info(sampleHotel.getChef());
+		
 	}
+
 }

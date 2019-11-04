@@ -1,4 +1,4 @@
-package com.dotlamp.pjt;
+package com.dotlamp.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

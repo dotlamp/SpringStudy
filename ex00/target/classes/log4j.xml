@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.dotlamp.pjt">
+	<logger name="com.dotlamp.pjt01">
 		<level value="info" />
 	</logger>
 	
