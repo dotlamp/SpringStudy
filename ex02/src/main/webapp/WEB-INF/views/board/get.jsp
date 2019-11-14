@@ -41,12 +41,14 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                        	<form id='openForm' action="/board/modifty" method="get">
-                        		<div class="form-group">
-                        			<label>Bno</label>
-                        			<input class="form-control" name='bno' value='<c:out value="${board.bno }" />' readonly="readonly">
-                        		</div>
-                        	</form>
+                   			<label>Bno</label>
+                     		<form id='operForm' action="/boad/modify" method="get">
+								<input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'>
+								<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum}"/>'>
+								<input type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
+								<input type='hidden' name='keyword' value='<c:out value="${cri.keyword}"/>'>
+								<input type='hidden' name='type' value='<c:out value="${cri.type}"/>'> 
+							</form>
                             	<div class="form-group">
                         			<label>Title</label>
                         			<input class="form-control" name='title' value='<c:out value="${board.title }" />' readonly="readonly">
@@ -67,15 +69,8 @@
 <!--                         		<button date-oper='modify' class="btn btn-default">Modify</button> -->
 <!--                         		<button date-oper='list' class="btn btn-info">List</button> -->
                         		
-                        		<button data-oper='modify' class="btn btn-default"><a href="/board/modify?bno=<c:out value="${board.bno}"/>">Modify</a></button>
-       							<button data-oper='list' class="btn btn-info"><a href="/board/list">List</a></button>
-                     		<form id='operForm' action="/boad/modify" method="get">
-								<input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'>
-								<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum}"/>'>
-								<input type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
-								<input type='hidden' name='keyword' value='<c:out value="${cri.keyword}"/>'>
-								<input type='hidden' name='type' value='<c:out value="${cri.type}"/>'> 
-							</form>
+                        		<button data-oper='modify' class="btn btn-default">Modify</button>
+       							<button data-oper='list' class="btn btn-info">List</button>
                         </div>
                         <!-- /.panel-body -->
                     </div>
