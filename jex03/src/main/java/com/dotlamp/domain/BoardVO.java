@@ -16,5 +16,4 @@ public class BoardVO {
 	private Date updateDate; 
 	
 	private int replyCnt;
-	
 }

@@ -48,11 +48,11 @@
  
  <select id="getListWithPaging" resultType="com.dotlamp.domain.BoardVO">
  <![CDATA[
-	select bno, title, content, writer, regdate, updatedate, replycnt
+	select bno, title, content, writer, regdate, updatedate, replyCnt
 	from
 		(
 		select /*+ index_desc(tbl_board, pk_board) */
-			rownum rn, bno, title, content, writer, regdate, updatedate, replycnt
+			rownum rn, bno, title, content, writer, regdate, updatedate, replyCnt
 		from
 			tbl_board
 		where
@@ -75,6 +75,8 @@
  	bno > 0
  </select>
  
+
+
 <insert id="insert">
 	insert into tbl_board(bno, title, content, writer)
 	values(seq_board.nextval, #{title}, #{content}, #{writer})
@@ -103,7 +105,7 @@
 </update>
 
 <update id="updateReplyCnt">
-	update tbl_table set replyCnt = replycnt + #{amount} where bno = #{bno}
+	update tbl_board set replyCnt = replyCnt + #{amount} where bno = #{bno}
 </update>
 
 </mapper>

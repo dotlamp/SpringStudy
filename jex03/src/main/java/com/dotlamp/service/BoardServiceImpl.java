@@ -2,10 +2,7 @@ package com.dotlamp.service;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.dotlamp.domain.BoardVO;
@@ -19,13 +16,12 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Service
 @AllArgsConstructor
-@Repository
 public class BoardServiceImpl implements BoardService{
 
 	//sping 4.3 이상 자동 처리
-	@Setter(onMethod_ = @Resource )
+	@Setter(onMethod_ = @Autowired )
 	private BoardMapper mapper;
-	
+
 	@Override
 	public void register(BoardVO board) {
 		log.info("register..." + board);
@@ -67,7 +63,6 @@ public class BoardServiceImpl implements BoardService{
 //		log.info("get List.....");
 //		return mapper.getList();
 //	}
-	
 	
 	
 	
